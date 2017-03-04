@@ -1,0 +1,3 @@
+# Ignore everything in drive directory, except the readme
+.gd/credentials.json
+.gd/drivedb
