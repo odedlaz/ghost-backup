@@ -14,7 +14,7 @@ ssh -i ~/.ssh/digitalocean_rsa root@blog "systemctl stop ghost"
 echo "backing up ghost blog to Drive"
 
 ssh -i ~/.ssh/digitalocean_rsa root@blog \
-   "tar --exclude=node_modules -Pczpf - -C /var/www/ghost ." | \
+   "tar -Pczpf - -C /var/www/ghost/content ." | \
    pv  | drive push -verbose -piped $REMOTE_PATH
 echo "backup uploaded, you can find it at: ${REMOTE_PATH}"
 
